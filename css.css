@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('Backg.jpg'); /* Путь к изображению */
+    background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрыло фон */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Убирает повторение изображения */
+    height: 100vh; /* Задает высоту фона на весь экран */
+}
+
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button-container {
+    position: absolute; /* Фиксируем блок с кнопками */
+    top: 0; /* Располагаем в верхней части */
+    right: 0; /* Располагаем в левой части */
+    display: flex; /* Горизонтальная линия кнопок */
+    padding: 10px; /* Отступы вокруг кнопок */
+}
+
+button {
+    position: relative;
+    font-size: large;
+    margin-right: 50px; /* Отступ между кнопками */
+    padding: 1px 1px;
+    background-color: #ffffff00;
+    color: #b4b4b4;
+    border: #000000;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #b4b4b4;
+    background-color: #ffffff00; /* Изменение фона при наведении */
+}
+
+button::after {
+    display: inline-block;
+    content: "";
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Толщина линии */
+    background-color: #b4b4b4;
+    transform: scaleX(0); /* Скрыта изначально */
+    transform-origin: bottom right; /* Точка начала анимации */
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+button:hover::after {
+    transform: scaleX(1); /* Показывает палочку */
+    transform-origin: bottom left; /* Появляется слева направо */
+}
